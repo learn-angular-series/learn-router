@@ -19,4 +19,10 @@ export class HomeComponent implements OnInit {
       (params)=>{console.log(params)}
     );
   }
+
+  public manualNav():void{
+    // this.router.navigateByUrl("/jokes");
+    //navigate方法不支持矩阵式参数
+    this.router.navigate(["/jokes"],{ queryParams: { page: 1,name:222 } });
+  }
 }

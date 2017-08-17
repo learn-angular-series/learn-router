@@ -18,7 +18,7 @@
                   <a [routerLink]="['home','1']">主页</a>
               </li>
               <li routerLinkActive="active" class="dropdown">
-                <a routerLink="jokes">段子</a>
+                <a [routerLink]="['jokes',{id:111,name:'damo'}]">段子</a>
               </li>
           </ul>
       </div>

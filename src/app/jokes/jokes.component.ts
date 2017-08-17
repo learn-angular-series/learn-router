@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'jokes',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JokesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public router:Router,
+    public activeRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.activeRoute.queryParams.subscribe(
+      (queryParam)=>{console.log(queryParam)}
+    );
+    this.activeRoute.params.subscribe(
+      (params)=>{console.log(params)}
+    );
   }
 
 }
