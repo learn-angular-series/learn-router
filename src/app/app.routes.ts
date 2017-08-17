@@ -5,11 +5,11 @@ import {JokesComponent} from './jokes/jokes.component';
 export const appRoutes=[
     {
 		path:'',
-		redirectTo:'home',
+		redirectTo:'home/1',
 		pathMatch:'full'
 	},
     {
-        path:'home',
+        path:'home/:page',
         component:HomeComponent
     },
     {
