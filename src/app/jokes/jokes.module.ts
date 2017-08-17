@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 import { JokesComponent } from './jokes.component';
 import { jokesRoutes } from './jokes.routes';
 
@@ -8,6 +9,7 @@ import { jokesRoutes } from './jokes.routes';
     JokesComponent
   ],
   imports: [
+    SharedModule,
     RouterModule.forChild(jokesRoutes)
   ],
   providers: [],
