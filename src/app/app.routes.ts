@@ -24,6 +24,10 @@ export const appRoutes=[
         loadChildren:'./picture/picture.module#PictureModule'
     },
     {
+        path:'msg',
+        loadChildren:'./msg/msg.module#MsgModule'
+    },
+    {
 		path:'**',
 		loadChildren:'./home/home.module#HomeModule'
 	}
