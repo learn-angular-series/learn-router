@@ -12,7 +12,13 @@ export const appRoutes=[
     },
     {
         path:'jokes',
+        data:{preload:true},
         loadChildren:'./jokes/jokes.module#JokesModule'
+    },
+    {
+        path:'picture',
+        data:{preload:false},
+        loadChildren:'./picture/picture.module#PictureModule'
     },
     {
 		path:'**',

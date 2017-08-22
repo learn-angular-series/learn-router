@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
+import { MyPreloadingStrategy } from './common/my-preloading-strategy';
 
 @NgModule({
   declarations: [
@@ -11,9 +12,9 @@ import { appRoutes } from './app.routes';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{preloadingStrategy:MyPreloadingStrategy})
   ],
-  providers: [],
+  providers: [MyPreloadingStrategy],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
