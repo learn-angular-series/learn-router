@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 
@@ -14,7 +15,7 @@ import { appRoutes } from './app.routes';
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthGuard],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
