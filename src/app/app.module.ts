@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AuthGuard } from './auth/auth.guard';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { MyPreloadingStrategy } from './common/my-preloading-strategy';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,9 @@ import { MyPreloadingStrategy } from './common/my-preloading-strategy';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes,{preloadingStrategy:MyPreloadingStrategy})
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [MyPreloadingStrategy],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
