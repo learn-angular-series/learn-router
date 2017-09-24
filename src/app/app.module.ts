@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
 import { MyPreloadingStrategy } from './common/my-preloading-strategy';
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MyPreloadingStrategy } from './common/my-preloading-strategy';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes,{preloadingStrategy:MyPreloadingStrategy})
+    RouterModule.forRoot(appRoutes,{preloadingStrategy:PreloadAllModules})
+    // ,RouterModule.forRoot(appRoutes,{preloadingStrategy:MyPreloadingStrategy})
   ],
   providers: [MyPreloadingStrategy],
   bootstrap: [AppComponent]
