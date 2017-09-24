@@ -1,5 +1,8 @@
 import { RouterModule, CanLoad, CanActivate } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
+import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
+import { LeftNavComponent } from './home/left-nav/left-nav.component';
+import { MainAreaComponent } from './home/main-area/main-area.component';
 
 export const appRoutes=[
     {
@@ -9,26 +12,22 @@ export const appRoutes=[
 	},
     {
         path:'home',
-        loadChildren:'./home/home.module#HomeModule'
-    },
-    {
-        path:'jokes',
-        data:{preload:true},
-        canLoad:[AuthGuard],
-        canActivate:[AuthGuard],
-        loadChildren:'./jokes/jokes.module#JokesModule'
-    },
-    {
-        path:'picture',
-        data:{preload:false},
-        loadChildren:'./picture/picture.module#PictureModule'
-    },
-    {
-        path:'msg',
-        loadChildren:'./msg/msg.module#MsgModule'
+		component:HomeComponent,
+		children: [
+            {
+                path: 'leftNav',
+                component: LeftNavComponent,
+                outlet: 'left-nav'
+            },
+            {
+                path: ':id',
+                component: MainAreaComponent,
+                outlet: 'main-area'
+            }
+        ]
     },
     {
 		path:'**',
-		loadChildren:'./home/home.module#HomeModule'
+		component:HomeComponent
 	}
 ];

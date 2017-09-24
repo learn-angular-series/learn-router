@@ -2,19 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
+import { LeftNavComponent } from './home/left-nav/left-nav.component';
+import { MainAreaComponent } from './home/main-area/main-area.component';
+
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LeftNavComponent,
+    MainAreaComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

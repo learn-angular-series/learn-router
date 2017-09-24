@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
 
 @Component({
   selector: 'left-nav',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  toogle(id) {
+    this.router.navigate(['/home', {outlets: {'main-area': [id]}}]);
+  }
 }
