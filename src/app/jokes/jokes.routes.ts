@@ -1,11 +1,11 @@
 import { RouterModule, CanDeactivate } from '@angular/router';
 import { JokesComponent } from './jokes.component';
-import { JokeGuard } from './joke-guard';
+import { JokesGuard } from './jokes-guard';
 
 export const jokesRoutes=[
     {
 		path:'',
         component:JokesComponent,
-        canDeactivate:[JokeGuard]
+        canDeactivate:[JokesGuard]
 	}
 ];

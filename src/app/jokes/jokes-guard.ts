@@ -3,7 +3,7 @@ import { CanDeactivate } from '@angular/router';
 import { JokesComponent } from './jokes.component';
 
 @Injectable()
-export class JokeGuard implements CanDeactivate<any>{
+export class JokesGuard implements CanDeactivate<any>{
    canDeactivate(component:JokesComponent){
        console.log(component);
        if(!component.saved){
