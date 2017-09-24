@@ -17,7 +17,7 @@ export const appRoutes=[
         component:JokesComponent
     },
     {
-		path:'**',
+		path:'**',//通配符匹配必须写在最后一个
 		component:HomeComponent
 	}
 ];
