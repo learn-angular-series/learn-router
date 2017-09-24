@@ -16,3 +16,4 @@ import { OrderInfoComponent } from '../order-info/order-info.component';
   bootstrap: []
 })
 export class SharedModule { }
+
