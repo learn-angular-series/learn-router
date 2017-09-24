@@ -9,17 +9,16 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class JokesComponent implements OnInit {
 
   constructor(
-    public router:Router,
+    public router: Router,
     public activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.activeRoute.queryParams.subscribe(
-      (queryParam)=>{console.log(queryParam)}
+      (queryParam) => { console.log(queryParam) }
     );
     this.activeRoute.params.subscribe(
-      (params)=>{console.log(params)}
+      (params) => { console.log(params) }
     );
   }
-
 }
