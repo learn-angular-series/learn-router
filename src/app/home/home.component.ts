@@ -9,20 +9,20 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public router:Router,
-    public activeRoute: ActivatedRoute) { 
+    public router: Router,
+    public activeRoute: ActivatedRoute) {
 
   }
 
   ngOnInit() {
     this.activeRoute.params.subscribe(
-      (params)=>{console.log(params)}
+      (params) => { console.log(params) }
     );
   }
 
-  public manualNav():void{
+  public manualNav(): void {
     // this.router.navigateByUrl("/jokes");
     //navigate方法不支持矩阵式参数
-    this.router.navigate(["/jokes"],{ queryParams: { page: 1,name:222 } });
+    this.router.navigate(["/jokes"], { queryParams: { page: 1, name: 222 } });
   }
 }
