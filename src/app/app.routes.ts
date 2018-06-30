@@ -1,23 +1,23 @@
 import { RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {JokesComponent} from './jokes/jokes.component';
+import { HomeComponent } from './home/home.component';
+import { JokesComponent } from './jokes/jokes.component';
 
-export const appRoutes=[
+export const appRoutes = [
     {
-		path:'',
-		redirectTo:'home',
-		pathMatch:'full'
-	},
-    {
-        path:'home',
-        component:HomeComponent
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
     },
     {
-        path:'jokes',
-        component:JokesComponent
+        path: 'home',
+        component: HomeComponent
     },
     {
-		path:'**',//通配符匹配必须写在最后一个
-		component:HomeComponent
-	}
+        path: 'jokes',
+        component: JokesComponent
+    },
+    {
+        path: '**',//通配符匹配必须写在最后一个
+        component: HomeComponent
+    }
 ];
