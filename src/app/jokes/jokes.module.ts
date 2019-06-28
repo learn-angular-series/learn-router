@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { JokesComponent } from './jokes.component';
 import { JokesGuard } from './jokes-guard';
-import { jokesRoutes } from './jokes.routes';
+import { JokesRoutingModule } from './jokes.routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +10,7 @@ import { jokesRoutes } from './jokes.routes';
   ],
   imports: [
     FormsModule,
-    RouterModule.forChild(jokesRoutes)
+    JokesRoutingModule
   ],
   providers: [JokesGuard],
   bootstrap: []
