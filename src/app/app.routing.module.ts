@@ -1,10 +1,10 @@
-import { RouterModule, CanLoad, CanActivate } from '@angular/router';
-import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LeftNavComponent } from './home/left-nav/left-nav.component';
 import { MainAreaComponent } from './home/main-area/main-area.component';
 
-export const appRoutes=[
+export const appRoutes:Routes=[
     {
 		path:'',
 		redirectTo:'home',
@@ -31,3 +31,8 @@ export const appRoutes=[
 		component:HomeComponent
 	}
 ];
+@NgModule({
+	imports: [RouterModule.forRoot(appRoutes)],
+	exports: [RouterModule]
+})
+export class AppRoutingModule { }
