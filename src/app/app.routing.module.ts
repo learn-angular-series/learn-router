@@ -9,21 +9,21 @@ export const appRoutes:Routes=[
 	},
     {
         path:'home',
-        loadChildren:'./home/home.module#HomeModule'
+        loadChildren: () => import("./home/home.module").then(m => m.HomeModule)
     },
     {
         path:'jokes',
         data:{preload:true},
-        loadChildren:'./jokes/jokes.module#JokesModule'
+        loadChildren: () => import("./jokes/jokes.module").then(m => m.JokesModule)
     },
     {
         path:'picture',
         data:{preload:false},
-        loadChildren:'./picture/picture.module#PictureModule'
+        loadChildren: () => import("./picture/picture.module").then(m => m.PictureModule)
     },
     {
 		path:'**',
-		loadChildren:'./home/home.module#HomeModule'
+        loadChildren: () => import("./home/home.module").then(m => m.HomeModule)
 	}
 ];
 
