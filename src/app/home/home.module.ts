@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home.component';
-import { homeRoutes } from './home.routes';
+import { HomeRoutingModule } from './home.routing.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +9,7 @@ import { homeRoutes } from './home.routes';
   ],
   imports: [
     SharedModule,
-    RouterModule.forChild(homeRoutes)
+    HomeRoutingModule
   ],
   providers: [],
   bootstrap: []

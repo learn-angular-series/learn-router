@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { JokesComponent } from './jokes.component';
-import { jokesRoutes } from './jokes.routes';
+import { JokesRoutingModule } from './jokes.routing.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { jokesRoutes } from './jokes.routes';
   ],
   imports: [
     SharedModule,
-    RouterModule.forChild(jokesRoutes)
+    JokesRoutingModule
   ],
   providers: [],
   bootstrap: []
