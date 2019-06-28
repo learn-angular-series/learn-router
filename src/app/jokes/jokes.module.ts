@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { JokesComponent } from './jokes.component';
-import { jokesRoutes } from './jokes.routes';
+import { JokesRoutingModule } from './jokes.routing.module';
 
 @NgModule({
   declarations: [
     JokesComponent
   ],
   imports: [
-    RouterModule.forChild(jokesRoutes)
+    JokesRoutingModule
   ],
   providers: [],
   bootstrap: []
