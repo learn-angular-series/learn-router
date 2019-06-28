@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PictureComponent } from './picture.component';
-import { pictureRoutes } from './picture.routes';
-import { RouterModule } from '@angular/router';
+import { PictureRoutingModule } from './picture.routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(pictureRoutes)
+    PictureRoutingModule
   ],
   declarations: [PictureComponent]
 })

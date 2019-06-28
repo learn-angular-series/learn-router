@@ -1,6 +1,7 @@
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-export const appRoutes=[
+export const appRoutes:Routes=[
     {
 		path:'',
 		redirectTo:'home',
@@ -25,3 +26,9 @@ export const appRoutes=[
 		loadChildren:'./home/home.module#HomeModule'
 	}
 ];
+
+@NgModule({
+	imports: [RouterModule.forRoot(appRoutes,{preloadingStrategy:PreloadAllModules})],
+	exports: [RouterModule]
+})
+export class AppRoutingModule { }
