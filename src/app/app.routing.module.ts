@@ -9,15 +9,15 @@ export const appRoutes:Routes=[
 	},
     {
         path:'home',
-        loadChildren:'./home/home.module#HomeModule'
+        loadChildren:() => import("./home/home.module").then(m => m.HomeModule)
     },
     {
         path:'jokes',
-        loadChildren:'./jokes/jokes.module#JokesModule'
+        loadChildren:() => import("./jokes/jokes.module").then(m => m.JokesModule)
     },
     {
 		path:'**',
-		loadChildren:'./home/home.module#HomeModule'
+		loadChildren:() => import("./home/home.module").then(m => m.HomeModule)
 	}
 ];
 
